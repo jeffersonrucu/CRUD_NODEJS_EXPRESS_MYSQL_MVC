@@ -1,0 +1,22 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "description": "Dashboard CRUD MVC",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffersonrucu/CRUD_NODEJS_EXPRESS_MYSQL_MVC.git"
+  },
+  "author": "Jefferson Oliveira and Ester Leonardo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeffersonrucu/CRUD_NODEJS_EXPRESS_MYSQL_MVC/issues"
+  },
+  "homepage": "https://github.com/jeffersonrucu/CRUD_NODEJS_EXPRESS_MYSQL_MVC#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
