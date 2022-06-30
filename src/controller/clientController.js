@@ -1,5 +1,5 @@
 module.exports.read   = function(application, req, res) {
-    res.render("dashboard/product");
+    res.render("dashboard/client");
 }
 
 module.exports.create = function(application, req, res) {
