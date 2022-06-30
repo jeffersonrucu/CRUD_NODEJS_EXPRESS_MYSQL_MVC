@@ -1,11 +1,16 @@
-const express = require('express')
-const app = express();
-const port = 3000;
+var express = require('express');
+var consign = require('consign');
+var app = express();
 
-const dashboard = require('./Routes/dashboard');
+app.set('view engine', 'ejs');
+app.set('views', './src/view');
 
-app.use('/dashboard', dashboard);
+consign()
+  .include('src/routes')
+  .then('src/model')
+  .then('src/controller')
+  .into(app);
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}!`)
+app.listen(3000, function(){
+  console.log('APP rodando na porta 3000');
 });

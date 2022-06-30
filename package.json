@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/jeffersonrucu/CRUD_NODEJS_EXPRESS_MYSQL_MVC#readme",
   "dependencies": {
+    "consign": "^0.1.6",
+    "ejs": "^3.1.8",
     "express": "^4.18.1"
   }
 }
