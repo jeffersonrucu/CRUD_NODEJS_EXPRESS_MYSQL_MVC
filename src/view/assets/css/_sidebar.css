@@ -1,0 +1,48 @@
+.menu {
+    padding: 36px 16px;
+    background: var(--primary);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: var(--width-sidebar);
+    height: 100vh;
+}
+
+.menu__logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu__logo img {
+    width: 32px;
+}
+
+.menu__logo__text {
+    color: var(--gray-900);
+    font-size: 19px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.menu__navigation {
+    margin-top: 36px;
+}
+
+.menu__box-link {
+    margin: 16px 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.menu__link {
+    color: var(--gray-900);
+    font-weight: 300;
+}
+
+.menu__division {
+    height: 0.1px;
+    width: 100%;
+    background: var(--gray-400);
+}

@@ -1,1 +1,21 @@
-<h1>Regitrar Cliente</h1>
+<%- include('./partials/sidebar'); %>
+<main>
+    <h1>Registrar Cliente</h1>
+
+    <section class="mt-5">
+        <form action="http://localhost:3000/produto/registrar" method="POST">
+            <fieldset class="d-flex flex-column">
+                <label for="">Nome do cliente</label>
+                <input name="name" type="text">
+            </fieldset>
+
+            <fieldset class="d-flex flex-column mt-3">
+                <label for="">Telefone</label>
+                <input name="phone" type="text">
+            </fieldset>
+
+            <button type="submit" class="btn btn-primary mt-5">Cadastrar</button>
+        </form>
+    </section>
+</main>
+<%- include('./partials/footer'); %>

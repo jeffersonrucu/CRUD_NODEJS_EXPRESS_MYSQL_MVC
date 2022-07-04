@@ -1,12 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://localhost:3000/assets/css/main.css">
+
     <title>CRUD NODEJS</title>
 </head>
 <body>
-    <aside>
-        sidebar
+    <aside class="menu">
+        <figure class="menu__logo">
+            <img src="http://localhost:3000/assets/image/logo.svg" alt="escudo azul">
+            <p class="menu__logo__text">Sistema SS</p>
+        </figure>
+
+        <nav class="menu__navigation">
+            <div class="menu__box-link">
+                <img src="http://localhost:3000/assets/image/icon_01.svg" alt="">
+                <a class="menu__link" href="http://localhost:3000/produto">Produto</a>
+            </div>
+
+            <div class="menu__box-link">
+                <img src="http://localhost:3000/assets/image/icon_02.svg" alt="">
+                <a class="menu__link" href="http://localhost:3000/cliente">Cliente</a>
+            </div>
+            
+            <div class="menu__division my-4"></div>
+
+            <div class="menu__box-link">
+                <img src="http://localhost:3000/assets/image/settings.svg" alt="">
+                <a class="menu__link" href="http://localhost:3000/produto/novo">Novo Produto</a>
+            </div>
+
+            <div class="menu__box-link">
+                <img src="http://localhost:3000/assets/image/settings.svg" alt="">
+                <a class="menu__link" href="http://localhost:3000/cliente/novo">Novo Cliente</a>
+            </div>
+        </nav>
     </aside>

@@ -5,32 +5,40 @@ module.exports = function(application) {
     application.src.controller.productController.read(application, req, res);
   });
 
-  application.post('/registrar/produto', function(req, res){
+  application.get('/produto/novo', function(req, res){
+    res.render("dashboard/registerProduct");
+  });
+
+  application.post('/produto/registrar', function(req, res){
     application.src.controller.productController.create(application, req, res);
   });
 
-  application.patch('/editar/produto', function(req, res){
+  application.patch('/produto/editar', function(req, res){
     application.src.controller.productController.update(application, req, res);
   });
 
-  application.delete('/excluir/produto', function(req, res){
+  application.delete('/produto/excluir', function(req, res){
     application.src.controller.productController.delete(application, req, res);
   });
 
   // Client
-  application.get('/clientes', function(req, res){
+  application.get('/cliente', function(req, res){
     application.src.controller.clientController.read(application, req, res);
   });
 
-  application.post('/registrar/cliente', function(req, res){
+  application.get('/cliente/novo', function(req, res){
+    res.render("dashboard/registerClient");
+  });
+
+  application.post('/cliente/registrar', function(req, res){
     application.src.controller.clientController.create(application, req, res);
   });
 
-  application.patch('/editar/cliente', function(req, res){
+  application.patch('/cliente/editar', function(req, res){
     application.src.controller.clientController.update(application, req, res);
   });
 
-  application.delete('/excluir/cliente', function(req, res){
+  application.delete('/cliente/excluir', function(req, res){
     application.src.controller.clientController.delete(application, req, res);
   });
 }
