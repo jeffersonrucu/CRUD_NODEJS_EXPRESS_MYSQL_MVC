@@ -21,9 +21,42 @@
                                 <td><%= clients[i]['phone'] %></td>
                                 <td class="d-flex justify-content-end gap-2">
                                     <button class="btn btn-danger js-client-delete"  id="<%= clients[i]['id'] %>">excluir</button>
-                                    <button class="btn btn-warning js-client-update" id="<%= clients[i]['id'] %>">editar</button>
+                                    <button class="btn btn-warning js-client-update" data-bs-toggle="modal" data-bs-target="#modal-update-<%= clients[i]['id'] %>">editar</button>
                                 </td>
                             </tr>
+
+                            <div class="modal fade" id="modal-update-<%= clients[i]['id'] %>" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel"><%= clients[i]['name'] %></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+        
+                                        <div class="modal-body">
+                                            <form action="http://localhost:3000/cliente/editar/<%= clients[i]['id'] %>" method="POST">
+                                                <fieldset class="d-flex flex-column">
+                                                    <label for="">Nome</label>
+                                                    <input type="text" value="<%= clients[i]['name'] %>" name="name" id="">
+                                                </fieldset>
+        
+                                                <fieldset class="d-flex flex-column">
+                                                    <label for="">Descrição</label>
+                                                    <input type="text" value="<%= clients[i]['phone'] %>" name="phone" id="">
+                                                </fieldset>
+        
+                                                <button type="submit" class="btn btn-success mt-3 w-100">Salvar</button>
+                                            </form>
+                                        </div>
+        
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         <% } %>
                     </tbody>
                 </table>

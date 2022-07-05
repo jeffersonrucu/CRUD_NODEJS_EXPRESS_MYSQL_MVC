@@ -30,7 +30,7 @@ module.exports.update = async function(application, req, res) {
             name:        req.body.name,
             phone:       req.body.phone,
         };
-        Product.update(updateProduct, { where: { id: req.params.id } })
+        Client.update(updateProduct, { where: { id: req.params.id } })
 
     } catch (error) {
         res.render("dashboard/status/400");
