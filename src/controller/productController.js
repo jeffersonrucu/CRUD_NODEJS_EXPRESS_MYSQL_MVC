@@ -27,16 +27,19 @@ module.exports.create = async function (application, req, res) {
 
 module.exports.update = async function(application, req, res) {
     try {
-        const product = await Product.findByPk('add ID via props');
-        product.name  = "add valor via props";
-        product.price = "add valor via props";
-        product.description = "add valor via props";
-        await produto.save();
+
+        var updateProduct = {
+            name:        req.body.name,
+            price:       req.body.price,
+            description: req.body.description
+        };
+        Product.update(updateProduct, { where: { id: req.params.id } })
+
     } catch (error) {
         res.render("dashboard/status/400");
     }  
 
-    res.redirect(200, 'http://localhost:3000/produto')
+    res.redirect('http://localhost:3000/produto')
 }
 
 module.exports.delete = function(application, req, res) {

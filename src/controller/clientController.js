@@ -20,20 +20,23 @@ module.exports.create = async function(application, req, res) {
         res.render("dashboard/status/400");
     }   
 
-    res.redirect(200, 'http://localhost:3000/cliente')
+    res.redirect('http://localhost:3000/cliente')
 }
 
 module.exports.update = async function(application, req, res) {
     try {
-        const client = await Client.findByPk('add ID via props');
-        client.name  = "add valor via props";
-        client.phone = "add valor via props";
-        await produto.save();
+
+        var updateProduct = {
+            name:        req.body.name,
+            phone:       req.body.phone,
+        };
+        Product.update(updateProduct, { where: { id: req.params.id } })
+
     } catch (error) {
         res.render("dashboard/status/400");
     }  
 
-    res.redirect(200, 'http://localhost:3000/cliente')
+    res.redirect('http://localhost:3000/cliente')
 }
 
 module.exports.delete = async function(application, req, res) {

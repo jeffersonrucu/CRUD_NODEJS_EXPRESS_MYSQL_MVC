@@ -13,7 +13,7 @@ module.exports = function(application) {
     application.src.controller.productController.create(application, req, res);
   });
 
-  application.patch('/produto/editar', function(req, res){
+  application.post('/produto/editar/:id', function(req, res){
     application.src.controller.productController.update(application, req, res);
   });
 
@@ -34,7 +34,7 @@ module.exports = function(application) {
     application.src.controller.clientController.create(application, req, res);
   });
 
-  application.patch('/cliente/editar', function(req, res){
+  application.post('/cliente/editar/:id', function(req, res){
     application.src.controller.clientController.update(application, req, res);
   });
 

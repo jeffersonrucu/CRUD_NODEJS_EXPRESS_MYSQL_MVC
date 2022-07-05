@@ -35,12 +35,50 @@
                                 <div class="modal-body">
                                     <p>Escolha a ação </p>
                                     <button class="btn btn-danger js-product-delete" id="<%= products[i]['id'] %>">Excluir</button>
-                                    <button class="btn btn-warning js-product-update" id="<%= products[i]['id'] %>">Editar</button>
+                                    <button class="btn btn-warning js-product-update" id="<%= products[i]['id'] %>" data-bs-toggle="modal" data-bs-target="#modal-update-<%= products[i]['id'] %>">Editar</button>
                                 </div>
 
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-bs-dismiss="modal">Fechar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="modal-update-<%= products[i]['id'] %>" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel"><%= products[i]['name'] %></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form action="http://localhost:3000/produto/editar/<%= products[i]['id'] %>" method="POST">
+                                        <fieldset class="d-flex flex-column">
+                                            <label for="">Nome</label>
+                                            <input type="text" value="<%= products[i]['name'] %>" name="name" id="">
+                                        </fieldset>
+
+                                        <fieldset class="d-flex flex-column my-3">
+                                            <label for="">Valor</label>
+                                            <input type="text" value="<%= products[i]['price'] %>" name="price" id="">
+                                        </fieldset>
+
+                                        <fieldset class="d-flex flex-column">
+                                            <label for="">Descrição</label>
+                                            <input type="text" value="<%= products[i]['description'] %>" name="description" id="">
+                                        </fieldset>
+
+                                        <button type="submit" class="btn btn-success mt-3 w-100">Salvar</button>
+                                    </form>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                                 </div>
                             </div>
                         </div>
