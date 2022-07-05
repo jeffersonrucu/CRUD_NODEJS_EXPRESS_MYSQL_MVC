@@ -25,12 +25,18 @@ module.exports.create = async function (application, req, res) {
     res.redirect('http://localhost:3000/produto')
 }
 
-module.exports.update = function(application, req, res) {
+module.exports.update = async function(application, req, res) {
     try {
-        res.render("dashboard/status/200");
+        const product = await Product.findByPk('add ID via props');
+        product.name  = "add valor via props";
+        product.price = "add valor via props";
+        product.description = "add valor via props";
+        await produto.save();
     } catch (error) {
         res.render("dashboard/status/400");
-    }   
+    }  
+
+    res.redirect(200, 'http://localhost:3000/produto')
 }
 
 module.exports.delete = function(application, req, res) {

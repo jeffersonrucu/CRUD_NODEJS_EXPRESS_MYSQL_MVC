@@ -23,12 +23,17 @@ module.exports.create = async function(application, req, res) {
     res.redirect(200, 'http://localhost:3000/cliente')
 }
 
-module.exports.update = function(application, req, res) {
+module.exports.update = async function(application, req, res) {
     try {
-        res.render("dashboard/status/200");
+        const client = await Client.findByPk('add ID via props');
+        client.name  = "add valor via props";
+        client.phone = "add valor via props";
+        await produto.save();
     } catch (error) {
         res.render("dashboard/status/400");
-    }   
+    }  
+
+    res.redirect(200, 'http://localhost:3000/cliente')
 }
 
 module.exports.delete = async function(application, req, res) {
