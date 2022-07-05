@@ -1,7 +1,14 @@
 const Product = require('../model/Product');
 
-module.exports.read   = function(application, req, res) {
-    res.render("dashboard/product");
+module.exports.read = async function(application, req, res) {
+
+    const products = await Product.findAll();
+    // products.forEach(element => {
+    //     console.log(element['name']);
+    // });
+    res.render("dashboard/product", {
+        products: products
+    });
 }
 
 module.exports.create = async function (application, req, res) {
@@ -19,9 +26,7 @@ module.exports.create = async function (application, req, res) {
         res.render("dashboard/status/400");
     }   
 
-    res.render("dashboard/status/200", {
-        sucess: 'Produto Cadastrado com Sucesso'
-    });
+    res.render("dashboard/product");
 }
 
 module.exports.update = function(application, req, res) {

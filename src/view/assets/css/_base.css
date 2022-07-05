@@ -3,6 +3,7 @@ body {
     padding-top: 36px;
     padding-right: 20px;
     color: var(--primary);
+    background-color: var(--gray-300);
 }
 
 h1 {

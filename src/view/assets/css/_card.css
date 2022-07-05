@@ -1,0 +1,33 @@
+.card-product {
+    width: 170px;
+    height: 225px;
+    padding: 30px 15px;
+    background: #FFF;
+    border: 1px solid var(--gray-200);
+    border-radius: 20px;
+}
+
+.card-product__image {
+    width: 129px;
+    height: 65px;
+}
+
+.card-product__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.card-product__title {
+    font-size: 16px;
+}
+
+.card-product__description {
+    font-size: 13px;
+    color: var(--gray-500);
+}
+
+.card-product__price {
+    font-size: 14px;
+    font-weight: 500;
+}

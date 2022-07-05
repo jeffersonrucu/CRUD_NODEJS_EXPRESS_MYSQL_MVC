@@ -1,5 +1,23 @@
 <%- include('./partials/sidebar'); %>
-    <div class="main">
+    <main class="product">
         <h1>Produtos</h1>
-    </div>
+
+        <section class="mt-5">
+            <div class="d-flex flex-wrap justify-content-start gap-2">
+                <% for(var i=0; i<products.length; i++) {%>
+                    <div class="card-product">
+                        <div class="d-flex justify-content-center">
+                             <figure class="card-product__image">
+                                 <img src="http://localhost:3000/assets/image/tenis.png" alt="">
+                             </figure>
+                        </div>
+                     
+                         <h2 class="card-product__title"><%= products[i]['name'] %></h2>
+                         <p class="card-product__description">Air Force 1 Jester XX Black Sonic Yellow ...</p>
+                         <p class="card-product__price">$<%= products[i]['price'] %></p>
+                     </div>
+                <% } %>
+            </div>
+        </section>
+    </main>
 <%- include('./partials/footer'); %>
