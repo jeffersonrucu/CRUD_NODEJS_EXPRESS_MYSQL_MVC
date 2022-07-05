@@ -26,9 +26,7 @@ module.exports.create = async function (application, req, res) {
         res.render("dashboard/status/400");
     }   
 
-    res.render("dashboard/status/200", {
-        sucess: 'Produto Cadastrado com Sucesso'
-    });
+    res.render("dashboard/product");
 }
 
 module.exports.update = function(application, req, res) {
