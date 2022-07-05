@@ -34,6 +34,12 @@ module.exports.update = function(application, req, res) {
 }
 
 module.exports.delete = function(application, req, res) {
-    Product.destroy({ where: { id: req.params.id }});
-    res.redirect('http://localhost:3000/produto')
+    try {
+        Product.destroy(
+            { where: { id: req.params.id }
+        })  .then(rowsDestroyed => rowsDestroyed ? res.send(200) : res.send(404)) 
+            .catch(console.error);
+    } catch (error) {
+        res.render("dashboard/status/400");
+    }   
 }

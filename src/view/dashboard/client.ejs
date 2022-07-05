@@ -20,8 +20,8 @@
                                 <td><%= clients[i]['name'] %></td>
                                 <td><%= clients[i]['phone'] %></td>
                                 <td class="d-flex justify-content-end gap-2">
-                                    <button class="btn btn-danger delete"  id="<%= clients[i]['id'] %>">excluir</button>
-                                    <button class="btn btn-warning update" id="<%= clients[i]['id'] %>">editar</button>
+                                    <button class="btn btn-danger js-client-delete"  id="<%= clients[i]['id'] %>">excluir</button>
+                                    <button class="btn btn-warning js-client-update" id="<%= clients[i]['id'] %>">editar</button>
                                 </td>
                             </tr>
                         <% } %>
