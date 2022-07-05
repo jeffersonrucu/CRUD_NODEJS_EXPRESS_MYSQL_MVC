@@ -1,3 +1,5 @@
+#CRUD NODEJS SEQUELIZE
+
 Iniciando o Projeto
 `npm start`
 
