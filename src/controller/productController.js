@@ -15,18 +15,18 @@ module.exports.create = async function (application, req, res) {
     try {
         const name = req.body.name;
         const price = req.body.price;
-        const amount = req.body.amount;
+        const description = req.body.description;
 
         await Product.create({
             name: name,
             price: price,
-            amount: amount
+            description: description
         })
     } catch (error) {
         res.render("dashboard/status/400");
     }   
 
-    res.render("dashboard/product");
+    res.redirect('http://localhost:3000/produto')
 }
 
 module.exports.update = function(application, req, res) {

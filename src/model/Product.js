@@ -15,7 +15,7 @@ const Product = database.define('product', {
     price: {
         type: Sequelize.STRING
     },
-    amount: {
+    description: {
         type: Sequelize.STRING
     },
 })
