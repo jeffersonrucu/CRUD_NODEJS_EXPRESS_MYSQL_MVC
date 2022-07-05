@@ -1,6 +1,6 @@
 # CRUD NODEJS SEQUELIZE
 
-_Obs: modificar dados do banco de dados no arquivo db.js_
+_Obs: modificar dados do banco de dados no arquivo db.js_ <br>
 _Obs: Versão do node testada: v16.15.0_
 
 
