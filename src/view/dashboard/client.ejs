@@ -10,6 +10,7 @@
                             <th scope="col">#</th>
                             <th scope="col">Nome</th>
                             <th scope="col">Telefone</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -18,6 +19,10 @@
                                 <th scope="row"><%= clients[i]['id'] %></th>
                                 <td><%= clients[i]['name'] %></td>
                                 <td><%= clients[i]['phone'] %></td>
+                                <td class="d-flex justify-content-end gap-2">
+                                    <button class="btn btn-danger delete"  id="<%= clients[i]['id'] %>">excluir</button>
+                                    <button class="btn btn-warning update" id="<%= clients[i]['id'] %>">editar</button>
+                                </td>
                             </tr>
                         <% } %>
                     </tbody>

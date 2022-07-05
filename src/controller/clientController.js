@@ -20,7 +20,7 @@ module.exports.create = async function(application, req, res) {
         res.render("dashboard/status/400");
     }   
 
-    res.redirect('http://localhost:3000/cliente')
+    res.redirect(200, 'http://localhost:3000/cliente')
 }
 
 module.exports.update = function(application, req, res) {
@@ -31,10 +31,13 @@ module.exports.update = function(application, req, res) {
     }   
 }
 
-module.exports.delete = function(application, req, res) {
+module.exports.delete = async function(application, req, res) {
     try {
-        res.render("dashboard/status/200");
+        Client.destroy(
+            { where: { id: req.params.id }
+        })  .then(rowsDestroyed => rowsDestroyed ? res.send(200) : res.send(404)) 
+            .catch(console.error);
     } catch (error) {
         res.render("dashboard/status/400");
-    }  
+    }   
 }

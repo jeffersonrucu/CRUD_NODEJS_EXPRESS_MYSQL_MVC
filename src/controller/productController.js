@@ -34,9 +34,6 @@ module.exports.update = function(application, req, res) {
 }
 
 module.exports.delete = function(application, req, res) {
-    try {
-        res.render("dashboard/status/200");
-    } catch (error) {
-        res.render("dashboard/status/400");
-    }  
+    Product.destroy({ where: { id: req.params.id }});
+    res.redirect('http://localhost:3000/produto')
 }

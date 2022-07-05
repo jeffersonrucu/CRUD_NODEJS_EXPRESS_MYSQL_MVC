@@ -17,7 +17,7 @@ module.exports = function(application) {
     application.src.controller.productController.update(application, req, res);
   });
 
-  application.delete('/produto/excluir', function(req, res){
+  application.delete('/produto/excluir/:id', function(req, res){
     application.src.controller.productController.delete(application, req, res);
   });
 
@@ -38,7 +38,7 @@ module.exports = function(application) {
     application.src.controller.clientController.update(application, req, res);
   });
 
-  application.delete('/cliente/excluir', function(req, res){
+  application.delete('/cliente/excluir/:id', function(req, res){
     application.src.controller.clientController.delete(application, req, res);
   });
 }
