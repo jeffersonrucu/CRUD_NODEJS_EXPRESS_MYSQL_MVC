@@ -1,3 +1,28 @@
 <%- include('./partials/sidebar'); %>
-<h1>Clientes</h1>
-<%- include('./partials/footer'); %>
+    <main class="product">
+        <h1>Clientes</h1>
+
+        <section class="mt-5">
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Telefone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i=0; i<clients.length; i++) {%>
+                            <tr>
+                                <th scope="row"><%= clients[i]['id'] %></th>
+                                <td><%= clients[i]['name'] %></td>
+                                <td><%= clients[i]['phone'] %></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <%- include('./partials/footer'); %>

@@ -1,7 +1,10 @@
 const Client = require('../model/Client');
 
-module.exports.read   = function(application, req, res) {
-    res.render("dashboard/client");
+module.exports.read = async function(application, req, res) {
+    const clients = await Client.findAll();
+    res.render("dashboard/client", {
+        clients: clients
+    });
 }
 
 module.exports.create = async function(application, req, res) {
@@ -17,9 +20,7 @@ module.exports.create = async function(application, req, res) {
         res.render("dashboard/status/400");
     }   
 
-    res.render("dashboard/status/200", {
-        sucess: 'Cliente Cadastrado com Sucesso'
-    });
+    res.redirect('http://localhost:3000/cliente')
 }
 
 module.exports.update = function(application, req, res) {

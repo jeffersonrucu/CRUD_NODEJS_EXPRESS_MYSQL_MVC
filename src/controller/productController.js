@@ -1,11 +1,7 @@
 const Product = require('../model/Product');
 
 module.exports.read = async function(application, req, res) {
-
     const products = await Product.findAll();
-    // products.forEach(element => {
-    //     console.log(element['name']);
-    // });
     res.render("dashboard/product", {
         products: products
     });
