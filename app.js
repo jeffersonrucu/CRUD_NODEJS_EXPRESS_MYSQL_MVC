@@ -1,36 +1,44 @@
 (async () => {
-
   const express = require('express');
   const bodyParser = require("body-parser")
-  const consign = require('consign');
   const path = require('path');
-  const app = express();
+  const consign = require('consign');
+
   const database = require('./db');
+  const product = require('./src/model/Product');
+  const client = require('./src/model/Client');
+  
+  const app = express();
 
   try {
-    const resultado = await database.sync();
-    console.log(resultado);
+    // init database
+    await database.sync();
+    
+    // init url encoded
+    app.use(bodyParser.urlencoded({
+      extended: true
+    })); 
+
+    // set view enginer
+    app.set('view engine', 'ejs');
+    app.set('views', './src/view');
+
+    // set public 
+    app.use(express.static(path.join(__dirname, './src/view')));
+
+    // init routes and controllers
+    consign()
+      .include('src/routes')
+      .then('src/controller')
+      .into(app);
+
+    // start routes 
+    app.listen(3000, function () {
+      console.log('APP rodando na porta 3000');
+    });
+
   } catch (error) {
     console.log(error);
   }
 
-
-  app.use(bodyParser.urlencoded({
-    extended: true
-  }));
-
-  app.set('view engine', 'ejs');
-  app.set('views', './src/view');
-
-  app.use(express.static(path.join(__dirname, './src/view')));
-
-  consign()
-    .include('src/routes')
-    .then('src/model')
-    .then('src/controller')
-    .into(app);
-
-  app.listen(3000, function () {
-    console.log('APP rodando na porta 3000');
-  });
 })();

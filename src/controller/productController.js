@@ -1,17 +1,27 @@
+const Product = require('../model/Product');
+
 module.exports.read   = function(application, req, res) {
     res.render("dashboard/product");
 }
 
 module.exports.create = async function (application, req, res) {
-    const name = req.body.name;
-    const price = req.body.price;
-    const amount = req.body.amount;
+    try {
+        const name = req.body.name;
+        const price = req.body.price;
+        const amount = req.body.amount;
 
-    await Produto.create({
-        name: name,
-        price: price,
-        amount: amount
-    })
+        await Product.create({
+            name: name,
+            price: price,
+            amount: amount
+        })
+    } catch (error) {
+        res.render("dashboard/status/400");
+    }   
+
+    res.render("dashboard/status/200", {
+        sucess: 'Produto Cadastrado com Sucesso'
+    });
 }
 
 module.exports.update = function(application, req, res) {
